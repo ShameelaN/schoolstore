@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="decsription" content="={% block metadescription %} {% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+<!-- Image and text -->
+  <body style="font-family: 'Roboto', 'sans-serif';">
+
+     <div class="container">
+       {% include 'navbar.html' %}
+       {% block content %}
+    <div>
+        <img class="my_image my_image_padding" src="{% static 'image/stationery.jpg' %}" alt="our products" style="height:300; width:1100;">
+    </div><br>
+    <div>
+    <h1 style="text-align:center">Our Service</h1>
+    </div>
+    <div>
+        <h5>Welcome Back !</h5>
+        <h5>Here students can access previous years question paper of their departments , as well as pen,notebook,textbooks or guides. To purchase please click the Next button to fill your full details . Even you can return your order or raise complaint  regarding the products. </h5>
+    </div><br><br>
+<!--    <div><h1 style="text-align:center"> Products</h1></div><br><br>-->
+<!--    <div class="row pb-5 mb-4">-->
+<!--        {% for i in product %}-->
+<!--    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">-->
+<!--      &lt;!&ndash; Card&ndash;&gt;-->
+<!--      <div class="card rounded shadow-sm border-0">-->
+<!--            <img class="img-fluid d-block mx-auto mb-3" src="{{i.image.url}}" alt="Card image cap" width="200" height="250">-->
+
+<!--        <div class="card-body p-4">-->
+<!--          <h5  class="text-dark">{{i.name}}</h5>-->
+<!--          <p class="small text-muted font-italic">{{i.description}}</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--        {% endfor %}-->
+<!--        </div>-->
+         <h4>To purchase, before you should once again fill all your details and select what you need.So please click the "Next" button.</h4>
+     <div style="align:center">
+       <a href="{% url 'student_form:student' %}"> <input type="button" value="Next" class="btn btn-warning btn-lg ms-2"></a>
+     </div>
+      {% endblock %}
+     <script src="{% static 'js/popper.min.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</div>
+</body>
